@@ -1,56 +1,29 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    <style>
-      /* Простые стили для двух колонок */
-      .wrapper {
-        display: flex;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px;
-        gap: 20px;
-      }
-      .content {
-        flex: 1;                /* занимает оставшееся пространство */
-        min-width: 0;           /* чтобы текст не вылезал */
-      }
-      .sidebar {
-        width: 250px;           /* фиксированная ширина боковой панели */
-        flex-shrink: 0;
-        border-left: 1px solid #ddd;
-        padding-left: 20px;
-      }
-      @media (max-width: 700px) {
-        .wrapper {
-          flex-direction: column;  /* на мобильных колонки друг под другом */
-        }
-        .sidebar {
-          width: 100%;
-          border-left: none;
-          padding-left: 0;
-          border-top: 1px solid #ddd;
-          padding-top: 20px;
-          margin-top: 20px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- Левая колонка: основное содержимое -->
-      <main class="content">
-        {{ content }}
-      </main>
-
-      <!-- Правая колонка: боковая панель -->
-      <aside class="sidebar">
-        {% include sidebar.html %}
-      </aside>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <style>
+    .wrapper { display: flex; max-width: 1000px; margin: 0 auto; padding: 20px; gap: 20px; }
+    .content { flex: 1; min-width: 0; }
+    .sidebar { width: 250px; flex-shrink: 0; border-left: 1px solid #ddd; padding-left: 20px; }
+    @media (max-width: 700px) {
+      .wrapper { flex-direction: column; }
+      .sidebar { width: 100%; border-left: none; padding-left: 0; border-top: 1px solid #ddd; padding-top: 20px; margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <main class="content">
+      {{ content }}
+    </main>
+    <aside class="sidebar">
+      {% include sidebar.html %}
+    </aside>
+  </div>
+</body>
 </html>
