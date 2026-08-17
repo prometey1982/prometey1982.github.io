@@ -1,0 +1,14 @@
+<h3>Меню</h3>
+<ul>
+  <li><a href="{{ '/' | relative_url }}">Главная</a></li>
+  <li><a href="{{ '/about/' | relative_url }}">Обо мне</a></li>
+</ul>
+
+<hr>
+
+<h3>Последние записи</h3>
+<ul>
+  {% for post in site.posts limit:5 %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
