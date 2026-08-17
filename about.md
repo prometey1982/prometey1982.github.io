@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Об авторе"
-date: 2026-08-17 01:00:00
+title: Обо мне
+permalink: /about/
 ---
 
 # Ты кто такой?
